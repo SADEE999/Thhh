@@ -1,0 +1,18 @@
+SADEE PRO STORE — CYBER APP UPDATE
+
+Included in this build:
+- Admin branding: change store name, upload PNG/JPG/WebP logo (3 MB max), preview logo, remove logo setting without deleting the stored object.
+- Existing product catalogue, wishlist, order flow, payment-reference submission, order status, promotions, announcements, review moderation and admin security retained.
+- PWA/app shell: install prompt, service-worker registration, cached shell/offline fallback, network status, mobile bottom navigation, quick search, focus mode, high contrast, text scaling, share action, keyboard shortcut, safe-area spacing, update notice and tap feedback.
+- Catalog additions: product sorting (newest/name/price), recently viewed products on the same device, compare up to three currently rendered products, quick clear-search control.
+- Help content: FAQ answers about pending verification, order tracking, digital delivery and PIN/OTP safety.
+- Visual additions: cyber grid, ambient particles, boot screen, reveal animations, neon effects, responsive mobile layout and reduced-motion support.
+
+Notes:
+- Product compare is a lightweight local comparison summary, not a live price guarantee.
+- Recently viewed and wishlist data are stored only in this browser/device.
+- PWA install availability depends on browser/platform and HTTPS deployment.
+- Offline mode caches the app shell; live catalogue, checkout, payment verification and order lookup still require an internet connection.
+- Admin operations require the existing private STORE_ADMIN_SECRET in Netlify. Never put service-role keys in frontend code or GitHub.
+- Run the included Supabase SQL files only if the matching schema changes are needed; back up the database first.
+- This ZIP has not been deployed to Netlify or live-tested against the user's Supabase project.

@@ -1,0 +1,21 @@
+SADEE XDIMA — REAL STORE V2 UPDATE
+
+Included in this package:
+- Cleaner retail-style storefront presentation with white surfaces, clearer product cards, calmer spacing and mobile two-column catalog.
+- Admin reorganized into three workspaces: Overview, Products & Stock, Orders & Payments.
+- Overview keeps store branding, hero settings, promos, announcements, customer directory and reviews together.
+- Products & Stock focuses on catalog editing, images, plans, bulk CSV, backup and stock.
+- Orders & Payments focuses on search, status filters, receipt review and license issuing.
+- Payment reference whitespace is normalized before order creation.
+- Added Supabase migration: supabase/real-store-v2-security.sql. It checks existing duplicate references / keys and adds case-insensitive normalized unique indexes.
+- Existing license issuance flow still only issues a key after admin verification; rejected and pending orders do not receive a key.
+- Mobile checkout submit button moved slightly upward.
+- Existing eZ Cash copy control and SADEE XDIMA loading artwork preserved.
+
+IMPORTANT SETUP:
+1. Back up your Supabase database.
+2. Run supabase/real-store-v2-security.sql in Supabase SQL Editor. If the duplicate-check queries return rows, resolve them carefully first; do not delete paid order records without checking.
+3. Deploy the full folder to Netlify and confirm required environment variables are set privately in Netlify.
+4. Test a sample order with a test payment flow before accepting real customer orders.
+
+Not included / not claimed: live Supabase or Netlify deployment, automatic eZ Cash provider verification, automated backup scheduling, or actual payment gateway integration. Admin must verify the real transaction using the provider's records. This ZIP has been syntax-checked locally only.

@@ -1,0 +1,9 @@
+SADEE XDIMA — eZ Cash number display update
+
+- eZ Cash number is displayed inside a random-colour neon box each page load.
+- Copy Number button copies the configured number (whitespace removed).
+- Clipboard API and a legacy fallback are supported.
+- Button briefly shows COPIED and the status text confirms the action.
+- Corrected whitespace removal in the number-copy logic.
+
+The configured number remains in config.js. Change it there if the business payment number changes. Never publish private PINs or OTPs.

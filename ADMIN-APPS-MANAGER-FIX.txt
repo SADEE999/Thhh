@@ -1,0 +1,21 @@
+SADEE XDIMA — ADMIN APPS MANAGER FIX
+
+What changed:
+- Added a dedicated Apps page to the admin navigation.
+- Added an Add App form with app name, description, LKR price, stock/licence count, version, Android compatibility, icon URL, HTTPS download URL, features, plans, featured and visibility controls.
+- Apps are saved to the existing products table with category = Apps using the existing secure Netlify manage-store action.
+- Added an Apps list with edit and delete actions.
+- Existing products and database records are not deleted or reset.
+
+How to use:
+1. Deploy the updated website files to the Netlify-connected GitHub repository.
+2. Open /admin/ and enter the private STORE_ADMIN_SECRET when prompted.
+3. Select Apps → Add app.
+4. Enter app details and a valid HTTPS download URL, then Save app.
+5. Use Edit app / Delete to manage existing Apps-category products.
+
+Important:
+- This form stores a secure HTTPS download link; it does not upload APK binaries.
+- App image is supplied as an HTTPS URL.
+- Admin actions still require the private STORE_ADMIN_SECRET in Netlify environment variables.
+- This package has not been deployed to the live Netlify site or tested against the user's live Supabase project.

@@ -1,0 +1,65 @@
+SADEE XDIMA — 50 STORE EXPERIENCE FEATURES
+
+THEME & VISUAL EXPERIENCE
+01. Full-screen dark live wallpaper background (new).
+02. Slow animated wallpaper drift (new).
+03. Red cyber scan-line overlay (new).
+04. Dark glass navigation bar (new).
+05. Glass-style product cards (new).
+06. Red hover glow on product cards (new).
+07. Dark modal backdrop blur (new).
+08. Dark admin workspace wallpaper (new).
+09. Dark admin page navigation (new).
+10. Reduced-motion support for wallpaper animations (new).
+
+SHOPPING & DISCOVERY
+11. Product search.
+12. Category filters.
+13. Product sorting by newest/name/price.
+14. Product detail modal.
+15. Product plan selector.
+16. Featured product support.
+17. Product image support.
+18. Product compatibility details.
+19. Product feature lists.
+20. Product version display support.
+21. Recently viewed products.
+22. Wishlist saved on the device.
+23. Product comparison selection.
+24. Empty search/catalog state.
+25. Responsive product grid.
+
+CHECKOUT & CUSTOMER EXPERIENCE
+26. Mobile-friendly order form.
+27. Customer name and email capture.
+28. Device/model note field.
+29. eZ Cash payment instructions.
+30. Copy eZ Cash number control.
+31. Transaction reference field.
+32. Optional receipt image upload.
+33. Receipt file type/size guidance.
+34. Promo code validation UI.
+35. Pending payment explanation.
+36. Order status lookup page.
+37. License display support after verification.
+38. FAQ page.
+39. Support page.
+40. Terms page.
+
+ADMIN & OPERATIONS
+41. Admin overview KPI cards.
+42. Product add/edit/delete controls.
+43. Product stock management.
+44. Product image upload and preview.
+45. CSV bulk product import.
+46. Product backup export/restore.
+47. Order search and status filters.
+48. Pending/verified/rejected order counters.
+49. Promo and announcement management.
+50. Review moderation and customer export tools.
+
+IMPORTANT
+- This update adds the live wallpaper and dark glass styling to the existing store package and retains the existing feature modules.
+- Some functions require correct Supabase schema, Netlify environment variables and deployment. This ZIP does not itself deploy to the live website.
+- Payment references and receipt images are not proof of payment. Admin must verify the actual transaction before issuing a license key.
+- Keep service-role keys and admin secrets only in Netlify environment variables; never place them in frontend files.

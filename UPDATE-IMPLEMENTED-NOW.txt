@@ -1,0 +1,28 @@
+SADEE PRO STORE — CYBER CONTROL UPDATE
+
+Implemented in this package:
+1. Admin control-room boot animation (visual only; does not perform or simulate real hacking).
+2. Low-stock alerts for active products with stock <= 3.
+3. Bulk product CSV import (up to 100 rows / 1 MB; new products only).
+4. Downloadable CSV import template.
+5. Product JSON backup export.
+6. Product JSON restore as new products (does not overwrite/delete existing products).
+7. Customer directory summarized from submitted orders.
+8. Customer search and CSV export.
+9. Customer email shortcut.
+10. Cyber grid / scanline / glitch styling for admin.
+
+Important limitations:
+- Backup/restore in this release covers product records only. It does not back up orders, payment receipts, Supabase Auth users, Storage objects, or database schema. Use Supabase's own backup/export tools for full database backups.
+- Customer directory is based on order records, not a full customer account system.
+- Customer accounts, cross-device wishlist sync, saved-address sync, Q&A submission/moderation, gift cards, loyalty points, referral rewards, and personalized recommendations need additional authenticated customer flows and database/RLS setup. They are not represented as active features in this release.
+- Automated order transitions are not enabled. Payment verification must remain a human admin action after checking the actual payment transaction.
+- Gift cards, loyalty balances and referrals must not be activated until server-side validation and abuse prevention are implemented.
+- The cyber/hacking style is decorative UI only; no hacking tools or security bypasses are included.
+
+Deployment:
+1. Extract this ZIP.
+2. Upload the extracted files to the existing GitHub repository.
+3. Run the SQL files already supplied in supabase/ only if your current project setup requires them; do not rerun destructive SQL blindly.
+4. Keep SUPABASE_SERVICE_ROLE_KEY and STORE_ADMIN_SECRET only in Netlify environment variables. Never put them in config.js or frontend code.
+5. Test CSV import and backup/restore with a small test catalogue before using on live products.

@@ -1,0 +1,20 @@
+SADEE XDIMA V4 – INSTALLATION (සිංහල)
+
+1. පළමුව Supabase project එකේ database backup එකක් ගන්න.
+2. Supabase → SQL Editor → New Query යන්න.
+3. supabase/v4-additive-features.sql file එකේ code එක Run කරන්න. මෙය products/orders/license keys මකන්නේ නැහැ; අලුත් columns සහ tables පමණක් එකතු කරනවා.
+4. ZIP එක extract කර එහි root එකේ index.html, admin/, netlify/, supabase/ තියෙන folder එකේ සියලුම files GitHub repository root එකට upload කරන්න.
+5. Netlify publish directory එක . ලෙස තබන්න. Netlify environment variables: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, STORE_ADMIN_SECRET.
+6. Netlify deploy කර site එක hard refresh කරන්න. Admin URL: /admin/
+
+V4 එකේ Apps screenshots සහ version history save/show කිරීම, download counter endpoint, promo expiry/max uses, sales analytics, order status notifications in admin, maintenance gate, local device activity log, low stock alert සහ reviews moderation ඇතුළත්.
+
+සටහන්:
+- Screenshot URLs HTTPS විය යුතුය.
+- App download count එක වැඩ කිරීමට migration run කරලා app downloads store එකේ App details button එකෙන් යා යුතුය.
+- Activity log එක දැනට භාවිත කරන browser/device එකේ පමණක් තබාගනී.
+- Analytics එක manage-order endpoint එකෙන් load කරන අලුත්ම orders 100 දක්වා ගණනය කරයි.
+- Order status notifications දැනට Admin Analytics page එකේ recent status list එකක්; push notification / email/SMS service එකක් නොවේ.
+- Maintenance mode save කිරීමෙන් public store එක maintenance overlay එක පෙන්වයි.
+- Existing Supabase data delete නොකරන්න. SQL run කිරීමට පෙර backup ගන්න.
+- Live Netlify/Supabase deployment එක මෙහිදී සිදු කර නැත.

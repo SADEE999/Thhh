@@ -1,0 +1,27 @@
+SADEE XDIMA — FINAL STORE PACKAGE
+
+UPLOAD
+1. Extract this ZIP.
+2. Upload the CONTENTS of this folder to the ROOT of your GitHub repository. index.html and netlify.toml must be at the repository root.
+3. Netlify build settings: Build command blank; Publish directory .; Functions directory netlify/functions.
+4. Deploy from the Git-connected Netlify site.
+
+ADMIN
+Open https://YOUR-SITE.netlify.app/admin/
+Use the private STORE_ADMIN_SECRET configured in Netlify for protected admin actions. Do not put this secret in config.js or GitHub.
+
+SUPABASE
+Run SUPABASE_FULL_SETUP.sql only after backing up your database. This is the V4 setup script. On an existing live database, inspect current tables first and do not blindly rerun schema creation. Keep the service-role key private in Netlify environment variables.
+Required Netlify variables: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, STORE_ADMIN_SECRET.
+
+LOADING SCREEN
+The admin page includes a Store loading screen settings section. It is controlled by the app's existing settings support; test saving and storefront display after SQL/deploy.
+
+PAYMENTS
+Orders submitted with eZ Cash details remain Pending until manually verified by an admin. A screenshot or reference alone is not proof of payment.
+
+NOTIFICATIONS
+Free WhatsApp notification is customer-triggered; it is not automatic email delivery. Resend cannot send from the Netlify free subdomain. A verified custom sending domain or another supported email provider is needed for automatic email.
+
+TEST STATUS
+This is a source ZIP, not deployed to your live Netlify/Supabase projects. Test product creation, order submission, admin verification, license delivery, loader settings, and WhatsApp notification after setup.

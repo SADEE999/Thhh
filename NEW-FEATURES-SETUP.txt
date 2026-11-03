@@ -1,0 +1,21 @@
+SADEE PRO STORE — ULTIMATE CYBER EDITION
+
+INSTALL
+1. Back up the current GitHub repository and Supabase database.
+2. Upload/extract the ZIP contents into the repository root, preserving folders.
+3. Commit and push. Netlify must redeploy from the connected GitHub repository.
+4. In Supabase SQL Editor, run supabase/ultimate-enhancements.sql.
+5. In Supabase Storage, create bucket hero-media as PUBLIC.
+6. Create bucket order-receipts as PRIVATE. Never make order-receipts public.
+7. Confirm Netlify environment variables exist: SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, STORE_ADMIN_SECRET.
+8. Redeploy Netlify after setting environment variables.
+
+NOTES
+- Hero media uploads are limited to 4 MB per file due to serverless request limits.
+- Customer receipt photos are optional and limited to 3 MB (JPG/PNG/WebP).
+- Receipt files remain private; Admin opens a short-lived signed preview link.
+- The customer must enter the payment reference. Admin must verify the actual incoming payment before issuing a license.
+- Duplicate non-empty payment references and duplicate non-empty license keys are blocked by database unique indexes.
+- Existing order/product data is preserved by the additive migration. Back up first.
+- Expiry dates are calculated for durations such as 30 days, 3 months, 1 year. Lifetime has no expiry.
+- Do not expose STORE_ADMIN_SECRET or SUPABASE_SERVICE_ROLE_KEY in browser code.

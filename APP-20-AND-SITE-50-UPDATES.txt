@@ -1,0 +1,22 @@
+SADEE PRO STORE — CYBER APP EDITION
+
+ADMIN BRANDING
+1. Change public store name from Admin > Store branding.
+2. Upload PNG/JPG/WebP logo from phone (3 MB limit).
+3. Preview selected logo.
+4. Use HTTPS logo URL if preferred.
+5. Remove logo from display without deleting the storage object.
+6. Existing admin secret protection remains enabled.
+
+20 APP / PWA FEATURES
+1 Install prompt when supported; 2 standalone PWA manifest; 3 service-worker shell cache; 4 offline/online indicator; 5 app-style mobile bottom navigation; 6 quick product-search shortcut; 7 focus mode; 8 saved high-contrast preference; 9 adjustable text scale; 10 safe-area spacing; 11 update notification; 12 browser-share shortcut; 13 keyboard Ctrl/Cmd+K search; 14 Escape closes product modal; 15 scroll-aware topbar; 16 app-style tap ripple; 17 back-to-top shortcut; 18 reduced-motion support; 19 offline fallback to cached homepage; 20 PWA shortcuts for Orders and Support.
+
+50 WEBSITE UX / GAMING FEATURES
+1 Cyber grid background; 2 ambient particles; 3 boot splash; 4 animated boot progress; 5 reading progress bar; 6 scroll reveal support; 7 product-card entrance animation; 8 product hover tilt; 9 card hover glow; 10 button ripple; 11 live pulse accents; 12 hero orbit motion; 13 floating hero chip; 14 responsive hero layout; 15 product search; 16 category filters; 17 product detail modal; 18 plan selector; 19 order form; 20 eZ Cash reference field; 21 optional receipt upload; 22 promo validation UI; 23 wishlist section; 24 wishlist persistence (existing code); 25 announcements section; 26 order status page; 27 license display support; 28 FAQ page; 29 support page; 30 terms page; 31 admin product inventory; 32 product image upload; 33 product edit; 34 product delete; 35 stock display; 36 featured products; 37 promo-code admin; 38 announcements admin; 39 review moderation; 40 order search; 41 order status filters; 42 pending/verified/rejected KPI cards; 43 license key issue/edit panel; 44 mobile admin layout; 45 keyboard focus outline; 46 reduced-motion accessibility; 47 responsive footer links; 48 dynamic site name; 49 dynamic uploaded logo; 50 dynamic accent color.
+
+NOTES
+- Cyber/hacker styling is visual only; no hacking, account access, exploit or intrusion functions are included.
+- Homepage hero photo/video remains unset by default; this update does not upload or delete hero media.
+- Existing order/payment/admin backend is retained. Site name/logo settings require Supabase site_settings table and Netlify STORE_ADMIN_SECRET.
+- Offline mode caches the app shell only; live catalog, orders and payment actions still need internet.
+- PWA install availability depends on browser/platform and HTTPS hosting.

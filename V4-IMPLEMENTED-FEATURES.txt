@@ -1,0 +1,20 @@
+SADEE XDIMA V4 – IMPLEMENTED IN THIS PACKAGE
+
+- Added Admin navigation pages: Overview, Products & Stock, Apps, Orders & Payments, Customers, Marketing & Reviews, Analytics, Store Settings.
+- Added app screenshots URL gallery data fields and version history editor fields.
+- Added display of app download_count (counter column is prepared by migration; public download tracking requires a redirect endpoint integration).
+- Added daily and monthly verified-sales totals based on loaded recent orders, average verified order value, and recent order status notifications.
+- Added local-device admin activity log for product/app saves and order actions. It is stored in that browser only, not a central audit database.
+- Added promo expiry date and max-use fields to admin form and server action.
+- Added maintenance mode settings and message storage. Storefront enforcement still requires the public site maintenance gate to be wired to these settings.
+- Low-stock alert and review moderation were already present and remain available.
+- Existing eZ Cash random-colour copy box and dark live wallpaper assets are preserved.
+
+IMPORTANT
+Run supabase/v4-additive-features.sql after backing up the database. This migration only adds columns/tables and does not delete products, orders or license keys.
+Some features are admin-side foundations and require further storefront integration or deployment configuration. No live Supabase or Netlify deployment was performed.
+
+Additional storefront integration:
+- App details now display screenshot gallery and version history when populated.
+- App download button routes through a Netlify function that increments download_count using an atomic Supabase RPC, then redirects to the configured HTTPS download URL.
+- Maintenance mode setting is read by the public store and displays a full-screen maintenance gate.

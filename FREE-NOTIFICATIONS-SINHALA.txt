@@ -1,0 +1,14 @@
+SADEE XDIMA — FREE NOTIFICATION SETUP
+
+මෙම version එකේ Resend/domain verification මත email යැවීම අනිවාර්ය කරලා නැහැ. Netlify free subdomain එකෙන්ම Resend sender domain එක verify කරන්න බැහැ.
+
+Order flow:
+1. Customer order එක submit කරයි.
+2. Order එක Pending ලෙස database එකේ save වේ.
+3. Customer ට Order Code එක පෙන්වයි.
+4. “Notify store on WhatsApp” button එකෙන් store WhatsApp chat එකට order code සහ item details යවන්න පුළුවන්. Customer විසින් Send ඔබන්න ඕනේ.
+5. Customer My Orders page එකෙන් status බලයි.
+
+සටහන: මෙය automatic email replacement එකක් නොවේ. WhatsApp notification එක customer විසින්ම යැවිය යුතුයි. Email address එක My Orders lookup සඳහා තවමත් භාවිතා වෙනවා. Automated email අවශ්‍ය නම් පසුව verified sender domain එකක් හෝ වෙනත් supported email provider credentials configure කරන්න.
+
+Netlify environment variables වල RESEND_API_KEY / STORE_FROM_EMAIL අවශ්‍ය නැහැ. SUPABASE_URL සහ SUPABASE_SERVICE_ROLE_KEY වැනි server-side variables පවතින පරිදි තබන්න. Secret keys කිසිවිටෙක GitHub/frontend එකට දාන්න එපා.

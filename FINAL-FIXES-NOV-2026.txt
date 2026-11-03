@@ -1,0 +1,7 @@
+SADEE XDIMA FINAL FIXES
+- Added a clear eZ Cash number copy box and copy-to-clipboard button.
+- Added copy confirmation text and graceful fallback message.
+- Updated loading artwork with the newly created SADEE XDIMA cyber splash image.
+- Improved mobile checkout bottom spacing and submit button visibility above bottom navigation.
+- Existing Supabase and Netlify functions retained.
+Note: deploy and test on the live Netlify site; browser clipboard access generally requires HTTPS and a user tap.

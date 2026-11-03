@@ -1,0 +1,7 @@
+SADEE XDIMA FINAL VISUAL UPDATE
+- Added custom cinematic SADEE XDIMA loading artwork at assets/sadee-xdima-loading.png
+- Added responsive full-screen splash presentation, animated zoom, dynamic progress indicator and system-ready state.
+- Respects reduced-motion preference.
+- Existing store, checkout, Supabase and Netlify files retained from the supplied ZIP.
+- This is a visual update; no real hacking functionality is included.
+Deploy by extracting the ZIP contents into the repository root (the project folder is sadee_next).

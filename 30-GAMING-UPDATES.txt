@@ -1,0 +1,48 @@
+SADEE PRO STORE — GAMING EXPERIENCE UPDATE
+
+Homepage hero photo removed as requested. The hero-art panel now uses its existing CSS-only graphic treatment; no replacement photo/video has been added.
+
+Included gaming experience enhancements:
+1. SADEE branded loading screen
+2. Animated loading bar
+3. Boot-screen safety timeout
+4. Reduced-motion accessibility support
+5. Scroll reading progress bar
+6. Scroll reveal animations
+7. Floating ambient particles
+8. Animated neon grid background
+9. Pointer-follow red ambient glow (desktop)
+10. Back-to-top control
+11. Gaming toast notifications
+12. Keyboard shortcut / to focus product search
+13. Escape shortcut to clear search
+14. Desktop product-card tilt
+15. Button ripple feedback
+16. Lazy loading for images
+17. Async image decoding
+18. Current year fallback
+19. Online/offline connection notices
+20. Active section navigation indicator
+21. Product grid render enhancement
+22. Live status pulse
+23. Keyboard focus visibility
+24. Form processing visual state
+25. Smooth page entrance
+26. Smooth anchor scrolling with sticky header offset
+27. Live clock in hero system caption
+28. Hero panel parallax depth (desktop)
+29. Product count data marker
+30. Order-code copy feedback toast
+31. Modal focus assistance
+32. PWA install availability detection
+33. Dark color-scheme metadata
+34. External-link security attributes
+
+Existing store, product, order, review, promo, My Orders, admin and Netlify Functions files are retained from the source ZIP.
+
+IMPORTANT DEPLOYMENT NOTES
+- This ZIP contains the website code only. It does not deploy itself or change your live Netlify site.
+- Keep existing Netlify environment variables and Supabase configuration.
+- Receipt uploads still require the private `order-receipts` bucket and a correctly configured Netlify Function.
+- Review the existing README.md and Supabase SQL files before applying database changes. Do not expose the Supabase Service Role key in frontend files.
+- Test checkout and admin functions after deploying to a preview first.
