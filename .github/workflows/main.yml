@@ -1,0 +1,145 @@
+name: Extract Website ZIP
+
+on:
+  push:
+    paths:
+      - "*.zip"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract-zip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract ZIP and find website
+        shell: bash
+        run: |
+          python - <<'PY'
+          import zipfile
+          import shutil
+          from pathlib import Path, PurePosixPath
+
+          root = Path.cwd()
+          temp = root / "_website_extract_temp"
+
+          shutil.rmtree(temp, ignore_errors=True)
+          temp.mkdir(parents=True)
+
+          archives = sorted(
+              root.glob("*.zip"),
+              key=lambda p: p.stat().st_mtime,
+              reverse=True
+          )
+
+          if not archives:
+              raise SystemExit(
+                  "ERROR: No ZIP file found in repository root."
+              )
+
+          archive = archives[0]
+          print(f"Extracting: {archive.name}")
+
+          with zipfile.ZipFile(archive, "r") as z:
+              for info in z.infolist():
+                  path = PurePosixPath(info.filename)
+
+                  if path.is_absolute() or ".." in path.parts:
+                      raise SystemExit(
+                          f"Unsafe ZIP path: {info.filename}"
+                      )
+
+                  if info.is_dir():
+                      continue
+
+                  parts = path.parts
+
+                  if not parts:
+                      continue
+
+                  if parts[0] == ".github":
+                      continue
+
+                  target = temp.joinpath(*parts)
+                  target.parent.mkdir(
+                      parents=True,
+                      exist_ok=True
+                  )
+
+                  with z.open(info) as src:
+                      with target.open("wb") as dst:
+                          shutil.copyfileobj(src, dst)
+
+          # Find index.html anywhere inside the extracted ZIP.
+          indexes = [
+              p for p in temp.rglob("index.html")
+              if p.is_file()
+          ]
+
+          if not indexes:
+              raise SystemExit(
+                  "ERROR: No index.html found inside the ZIP. "
+                  "Check whether the ZIP contains the website files."
+              )
+
+          # Prefer the shallowest website index.html.
+          index_file = min(
+              indexes,
+              key=lambda p: (len(p.relative_to(temp).parts), str(p))
+          )
+
+          webroot = index_file.parent
+
+          print(f"Website root: {webroot}")
+          print(f"Found index: {index_file}")
+
+          # Copy website contents into the repository root.
+          for item in webroot.iterdir():
+              if item.name in {
+                  ".git",
+                  ".github",
+                  "_website_extract_temp"
+              }:
+                  continue
+
+              destination = root / item.name
+
+              if item.is_dir():
+                  if destination.exists():
+                      shutil.rmtree(destination)
+
+                  shutil.copytree(item, destination)
+              else:
+                  shutil.copy2(item, destination)
+
+          shutil.rmtree(temp, ignore_errors=True)
+
+          if not (root / "index.html").is_file():
+              raise SystemExit(
+                  "ERROR: index.html was not copied to repository root."
+              )
+
+          print("SUCCESS: Website files copied to repository root.")
+          PY
+
+      - name: Commit website files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A
+          git reset -- '*.zip'
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Deploy website files from ZIP"
+            git push
+          fi
